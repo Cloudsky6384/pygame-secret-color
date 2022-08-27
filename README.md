@@ -1,4 +1,4 @@
-# pygame-eat-ball [半成品,众筹源码]
+# pygame-secret-color [半成品,众筹源码]
 本项目使用pygame制作 <br>
 
 游戏目标：控制玩家吃球得高分 <br>
