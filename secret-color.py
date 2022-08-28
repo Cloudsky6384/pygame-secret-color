@@ -12,10 +12,10 @@ class Player:
         self.color_back = (255, 159, 243)
         self.screen = screen
         self.player = None
-        self.size = (15, 15)
+        self.size = (17, 17)
         self.x, self.y = 1200 / 2, 700 / 2
         self.player_rect = pygame.Rect(self.x, self.y, *self.size)
-        self.speed = 3
+        self.speed = 2
 
     def player_key(self):
         key_pressed = pygame.key.get_pressed()
