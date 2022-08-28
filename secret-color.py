@@ -112,17 +112,18 @@ class Game:
         else:
             self.screen_over = self.screen.blit(self.font_over, (1200 / 2 - 70, 700 / 2 - 70))
 
-    def collide(self, player_rect, bull_rect, bullets, bullets_rect, bullet):
+    def collide(self, player_rect, bull_rect, bullets, bullets_rect):
         self.player_rect = player_rect
         self.bull_rect = bull_rect
         self.bullets = bullets
-        self.bullet = bullet
         self.bullets_rect = bullets_rect
+        i = 0
         for bullrect in self.bull_rect:
             if self.player_rect.colliderect(bullrect):
-                self.bullets.remove(bullet)
+                self.bullets.pop(i)
                 self.bullets_rect.remove(bullrect)
                 self.fraction += 1
+            i += 1
 
     def game_key(self, event):
         if (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE) or \
@@ -143,8 +144,7 @@ class Game:
                 self.game_key(event)
             self.screen.fill(self.color_back)
 
-            game.collide(player.player_rect, bulletset.bullets_rect, bulletset.bullets, bulletset.bullets_rect,
-                         bulletset.bullet_r)
+            game.collide(player.player_rect, bulletset.bullets_rect, bulletset.bullets, bulletset.bullets_rect)
 
             bulletset.display()
 
