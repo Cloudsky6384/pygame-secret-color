@@ -1,6 +1,7 @@
 import pygame
 import random
 import time
+import sys
 from pygame.locals import *
 
 pygame.init()
@@ -139,7 +140,7 @@ class Game:
                 # print(event)
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    exit()
+                    sys.exit()
 
                 self.game_key(event)
             self.screen.fill(self.color_back)
