@@ -83,7 +83,7 @@ class Game:
         self.font_o = pygame.font.Font('./font/MiSans-Light.ttf', 70)
         self.font_over = self.font_o.render('over!', True, (140, 140, 140))
 
-        self.game_time = 45
+        self.game_time = 30
         self.start_time = time.time()
 
         self.screen = pygame.display.set_mode((1200, 700))
